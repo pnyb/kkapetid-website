@@ -3,13 +3,14 @@ import Slider from "react-slick";
 
 const menuPanels = [
   "/images/menuuuu.jpg",
-  "/images/menuuuu.jpg",
-  "/images/menuuuu.jpg",
-  "/images/menuuuu.jpg",
-  "/images/menuuuu.jpg",
-  "/images/menuuuu.jpg",
-  "/images/menuuuu.jpg",
-  "/images/menuuuu.jpg",
+  "/images/menuuuu2.jpg",
+  "/images/menuuuu3.jpg",
+  "/images/menuuuu4.jpg",
+  "/images/menuuuu5.jpg",
+  "/images/menuuuu6.jpg",
+  "/images/menuuuu7.jpg",
+  "/images/menuuuu8.jpg",
+  "/images/menuuuu9.jpg",
 ];
 
 export default function MenuCarousel() {
