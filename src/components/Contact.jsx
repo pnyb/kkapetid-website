@@ -6,8 +6,8 @@ export default function Contact() {
     <section id="contact" className="py-20 px-6 md:px-20 bg-white">
       <h2 className="text-4xl font-bold text-center mb-12 text-brick">Visit Us</h2>
       <div className="max-w-4xl mx-auto text-center space-y-6">
-        <p className="text-lg">Sinsuat Avenue, Esteros, RH10 , Cotabato City, Philippines, 9600</p>
-        <p className="text-lg">Mon-Sat: 10:00 AM – 9:00 PM</p>
+        <p className="text-lg font-serif">Sinsuat Avenue, Esteros, RH10 , Cotabato City, Philippines, 9600</p>
+        <p className="text-lg font-serif">Mon-Sat: 10:00 AM – 9:00 PM</p>
 
         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
           <iframe

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const reviews = [
   {
@@ -42,8 +42,12 @@ function Stars({ rating }) {
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="py-20 px-6 md:px-20" style={{ backgroundColor: '#f7e3da' }}>
-      <h2 className="text-4xl font-bold text-center mb-12 text-brick">
+    <section
+      id="reviews"
+      className="py-20 px-6 md:px-20"
+      style={{ backgroundColor: "#f7e3da" }}
+    >
+      <h2 className="text-4xl text-center mb-12 text-brick font-montserrat font-bold uppercase tracking-widest">
         What Our Customers Say
       </h2>
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
@@ -59,7 +63,7 @@ export default function Reviews() {
               loading="lazy"
             />
             <Stars rating={rating} />
-            <p className="italic mt-4 text-gray-700">"{text}"</p>
+            <p className="italic mt-4 text-gray-700 font-serif">"{text}"</p>
             <p className="mt-4 font-semibold text-brick">{name}</p>
           </div>
         ))}

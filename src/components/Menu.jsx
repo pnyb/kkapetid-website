@@ -1,109 +1,82 @@
-import React from 'react';
+import React from "react";
+import Slider from "react-slick";
 
-export default function Menu() {
-  const menuItems = [
-    {
-      name: "Pepperoni Pizza",
-      category: "Pizza",
-      regularPrice: "₱255",
-      soloPrice: "₱145",
-      image: "/images/PZpepperoni.jpg"
-    },
-    {
-      name: "Garlic and Cheese",
-      category: "Pizza",
-      regularPrice: "₱255",
-      soloPrice: "₱145",
-      image: "/images/PZgc.jpg"
-    }, {
-      name: "Three Cheese",
-      category: "Pizza",
-      regularPrice: "₱255",
-      soloPrice: "₱145",
-      image: "/images/PZthree.jpg"
-    },
-    {
-      name: "Taco Nacho",
-      category: "Pizza",
-      price: "₱295",
-      image: "/images/PZtaco.jpg"
-    }, {
-      name: "Garlic Shrimp",
-      category: "Pizza",
-      price: "₱295",
-      image: "/images/PZgs.jpg"
-    },
-    {
-      name: "KK Supreme",
-      category: "Pizza",
-      price: "₱295",
-      image: "/images/PZkk.jpg"
-    },
-    { name: "Asian Garlic Pasta", category: "Pasta", price: "₱135", image: "/images/PAsian.jpg" },
-    { name: "Spaghetti Bolognese", category: "Pasta", price: "₱145", image: "/images/PAlfredo.jpg" },
-    { name: "Baked Spaghetti", category: "Pasta", price: "₱145", image: "/images/PSpag.jpg" },
-    { name: "Caramel Macchiato", category: "Drinks", price: "₱125", image: "/images/DMacci.png" },
-    { name: "Spanish Latte", category: "Drinks", price: "₱125", image: "/images/DSpanish.png" },
-    { name: "Tres Leches", category: "Drinks", price: "₱125", image: "/images/DTres.png" },
-    { name: "Salted Caramel", category: "Drinks", price: "₱145", image: "/images/DSalted.png" },
-    { name: "Dirty Matcha", category: "Drinks", price: "₱155", image: "/images/DMatcha.png" },
-    { name: "Mocha Frappe", category: "Drinks", price: "₱155", image: "/images/DMocha.png" },
-    { name: "Ube Milkshake", category: "Drinks", price: "₱135", image: "/images/DUbe.png" },
-    { name: "Mango Mania", category: "Drinks", price: "₱110", image: "/images/DMango.png" },
-    { name: "Apple Lemon Pop", category: "Drinks", price: "₱125", image: "/images/DAppleLemon.png" },
-  ];
+const menuPanels = [
+  "/images/menuuuu.jpg",
+  "/images/menuuuu.jpg",
+  "/images/menuuuu.jpg",
+  "/images/menuuuu.jpg",
+  "/images/menuuuu.jpg",
+  "/images/menuuuu.jpg",
+  "/images/menuuuu.jpg",
+  "/images/menuuuu.jpg",
+];
 
-  const categories = ["All", "Pizza", "Pasta", "Drinks"];
-  const [selectedCategory, setSelectedCategory] = React.useState("All");
-
-  const filteredItems =
-    selectedCategory === "All"
-      ? menuItems
-      : menuItems.filter((item) => item.category === selectedCategory);
+export default function MenuCarousel() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    adaptiveHeight: true,
+    swipe: true,
+  };
 
   return (
-    <section id="menu" className="py-20 px-6 md:px-20" style={{ backgroundColor: '#f7e3da' }}>
-      <h2 className="text-4xl font-bold text-center mb-12 text-brick">Our Menu</h2>
+    <section
+      id="menu"
+      className="relative py-16 px-6 md:px-20 bg-gradient-to-br from-brand-light to-brand-medium overflow-hidden"
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-brand-dark opacity-10 pointer-events-none"></div>
 
-      {/* Category filters */}
-      <div className="flex justify-center gap-6 mb-10">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            className={`px-4 py-2 rounded-full font-semibold ${
-              selectedCategory === cat
-                ? "bg-brick text-white"
-                : "bg-white text-brick border border-brick hover:bg-brick hover:text-white"
-            } transition`}
-            onClick={() => setSelectedCategory(cat)}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+      {/* Decorative shapes */}
+      <svg
+        className="absolute top-10 left-[-80px] w-64 h-64 opacity-20 pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        fill="none"
+      ></svg>
 
-      {/* Menu items grid */}
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {filteredItems.map((item, index) => (
-          <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <img
-              src={item.image || "https://via.placeholder.com/400x250"}
-              alt={item.name}
-              className="w-full h-56 object-cover"
-            />
-            <div className="p-4">
-              <h4 className="font-semibold text-lg mb-2">{item.name}</h4>
-              {item.regularPrice && item.soloPrice ? (
-                <div className="flex justify-between text-brick font-bold">
-                  <span>Regular: {item.regularPrice}</span>
-                  <span>Solo: {item.soloPrice}</span>
-                </div>
-              ) : (
-                <span className="text-brick font-bold">{item.price}</span>
-              )}
+      <svg
+        className="absolute bottom-10 right-[-80px] w-72 h-72 opacity-20 pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        fill="none"
+      ></svg>
+      <div className="max-w-5xl mx-auto">
+        {/* Carousel */}
+        <Slider {...settings}>
+          {menuPanels.map((src, index) => (
+            <div key={index} className="px-4">
+              <img
+                src={src}
+                alt={`Menu Panel ${index + 1}`}
+                className="rounded-lg shadow-lg mx-auto object-contain max-h-[75vh] border-4 border-brand-light"
+                loading="lazy"
+              />
             </div>
-          </div>
-        ))}
+          ))}
+        </Slider>
+
+        {/* Tagline + CTA at bottom */}
+        <div className="mt-12 max-w-5xl mx-auto text-center">
+          <p
+            className="text-xl md:text-2xl font-semibold font-serif tracking-wide italic text-brand-dark mb-6"
+            style={{ textShadow: "1px 1px 3px rgba(84,100,100,0.5)" }}
+          >
+            Fresh & hot, just one call away!
+          </p>
+
+          <a
+            href="tel:+639959812488"
+            className="w-full md:w-1/2 bg-gradient-to-r from-brand-medium to-brand-dark text-white font-montserrat font-bold uppercase tracking-widest py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition transform hover:scale-105 flex items-center justify-center gap-3 mx-auto"
+          >
+            <span>📞</span> Call to Order
+          </a>
+        </div>
       </div>
     </section>
   );

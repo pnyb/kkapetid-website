@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -6,33 +6,37 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Menu', href: '#menu' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' },
+    { name: "ABOUT", href: "#about" },
+    { name: "MENU", href: "#menu" },
+    { name: "GALLERY", href: "#gallery" },
+    { name: "CONTACT", href: "#contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-shadow bg-white ${
-        scrolled ? 'shadow-md' : 'shadow-none'
+        scrolled ? "shadow-md" : "shadow-none"
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
         <a href="/" className="flex items-center">
-          <img src="/images/logo.jpg" alt="Kkapetid Logo" className="h-10 w-auto" />
+          <img
+            src="/images/logo.jpg"
+            alt="Kkapetid Logo"
+            className="h-10 w-auto"
+          />
         </a>
         {/*<h1 className="text-2xl font-bold text-brick cursor-pointer select-none">kkapetid</h1>*/}
 
         {/* Desktop menu */}
-        <ul className="hidden md:flex gap-8 font-semibold text-gray-700">
+        <ul className="hidden md:flex space-x-8 font-montserrat font-bold uppercase tracking-widest text-sm">
           {navLinks.map((link) => (
             <li key={link.name}>
               <a
