@@ -94,7 +94,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/8 px-6 md:px-16 py-5">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/35">
-          <p>© {new Date().getFullYear()} KKapetid Café &amp; Resto. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} KKapetid. All rights reserved.</p>
           <p>Made with ❤️ in Cotabato City 🇵🇭</p>
         </div>
       </div>
