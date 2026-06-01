@@ -119,7 +119,7 @@ export default function Navbar() {
               📞 Call to Order
             </a>
           </nav>
-          <p className="mt-auto text-xs text-gray-400 text-center">Mon–Sat · 10AM – 9PM</p>
+          <p className="mt-auto text-xs text-gray-400 text-center">Mon–Sat · 12PM – 10PM</p>
         </div>
       </div>
     </>
